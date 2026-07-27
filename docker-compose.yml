@@ -35,7 +35,12 @@ services:
       ADDR: ":8080"
       STATIC_DIR: /app/static
       TZ: ${TZ:-Europe/Istanbul}
-      DATABASE_URL: postgres://${POSTGRES_USER:-durus}:${POSTGRES_PASSWORD:-durus}@db:5432/${POSTGRES_DB:-durus}?sslmode=disable
+      # Build URL in-app (url.UserPassword) — raw passwords with @ & % break URI parsing.
+      POSTGRES_USER: ${POSTGRES_USER:-durus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-durus}
+      POSTGRES_DB: ${POSTGRES_DB:-durus}
+      POSTGRES_HOST: db
+      DB_PORT: "5432"
     healthcheck:
       test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/healthz"]
       interval: 15s

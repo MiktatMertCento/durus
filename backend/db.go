@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"net"
+	"net/url"
 	"os"
 	"time"
 
@@ -65,6 +67,21 @@ CREATE INDEX IF NOT EXISTS session_archives_ended_at_idx
 }
 
 func databaseURL() string {
+	// Prefer discrete vars so passwords with @ & % * etc. stay valid.
+	if user := os.Getenv("POSTGRES_USER"); user != "" {
+		pass := os.Getenv("POSTGRES_PASSWORD")
+		host := envOr("POSTGRES_HOST", "db")
+		port := envOr("DB_PORT", "5432")
+		name := envOr("POSTGRES_DB", "durus")
+		u := &url.URL{
+			Scheme:   "postgres",
+			User:     url.UserPassword(user, pass),
+			Host:     net.JoinHostPort(host, port),
+			Path:     "/" + name,
+			RawQuery: "sslmode=disable",
+		}
+		return u.String()
+	}
 	if v := os.Getenv("DATABASE_URL"); v != "" {
 		return v
 	}
