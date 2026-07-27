@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none" role="img">
+  <title>Oturarak çalış</title>
+  <defs>
+    <style>
+      .glow { fill: #c5ddd0; opacity: 0.55; }
+      .ink { fill: #1b3a2f; }
+      .mid { fill: #2f6b4f; }
+      .soft { fill: #e8f5ee; }
+      .line {
+        fill: none;
+        stroke: #1b3a2f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .figure { transform-box: fill-box; transform-origin: 78px 218px; animation: breathe 3.6s ease-in-out infinite; }
+      .forearm { transform-box: fill-box; transform-origin: left center; animation: type 1.35s ease-in-out infinite; }
+      .cursor { animation: blink 2.2s ease-in-out infinite; }
+      @keyframes breathe {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-2px); }
+      }
+      @keyframes type {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(4deg); }
+      }
+      @keyframes blink {
+        0%, 45%, 55%, 100% { opacity: 0.28; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <circle class="glow" cx="160" cy="156" r="128"/>
+  <ellipse cx="160" cy="274" rx="96" ry="12" fill="#1b3a2f" opacity="0.08"/>
+
+  <!-- chair -->
+  <g class="chair">
+    <rect class="mid" x="48" y="100" width="24" height="120" rx="12"/>
+    <rect class="mid" x="48" y="206" width="108" height="24" rx="12"/>
+    <rect class="mid" x="64" y="230" width="12" height="34" rx="6" opacity="0.85"/>
+    <rect class="mid" x="116" y="230" width="12" height="34" rx="6" opacity="0.85"/>
+    <circle class="mid" cx="96" cy="268" r="8" opacity="0.7"/>
+  </g>
+
+  <!-- desk + monitor -->
+  <g class="desk">
+    <rect class="ink" x="182" y="186" width="94" height="16" rx="8"/>
+    <rect class="mid" x="196" y="202" width="11" height="58" rx="5"/>
+    <rect class="mid" x="250" y="202" width="11" height="58" rx="5"/>
+    <rect class="ink" x="200" y="106" width="62" height="52" rx="12"/>
+    <rect class="soft" x="208" y="114" width="46" height="34" rx="7"/>
+    <rect class="cursor mid" x="223" y="126" width="12" height="10" rx="2"/>
+    <rect class="mid" x="222" y="170" width="20" height="16" rx="4"/>
+  </g>
+
+  <!-- seated deep in chair -->
+  <g class="figure">
+    <circle class="ink" cx="78" cy="100" r="20"/>
+    <!-- spine hugs backrest, hips planted on seat, thighs + calves -->
+    <path
+      class="line"
+      d="M78 122
+         C76 156 74 188 76 218
+         H164
+         V260"
+      stroke-width="16"
+    />
+    <!-- hip weight on the seat cushion -->
+    <circle class="ink" cx="86" cy="218" r="11"/>
+    <path class="line" d="M150 260h30" stroke-width="10" opacity="0.55"/>
+    <path class="line" d="M80 152c26 14 48 28 62 36" stroke-width="12"/>
+    <g class="forearm">
+      <path class="line" d="M142 188c22 6 40 8 52 6" stroke-width="12"/>
+    </g>
+  </g>
+</svg>

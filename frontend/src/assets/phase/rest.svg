@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none" role="img">
+  <title>Dinlen</title>
+  <defs>
+    <style>
+      .glow { fill: #9abcd6; opacity: 0.52; }
+      .ink { fill: #2a4f6b; }
+      .mid { fill: #4d7390; }
+      .foam { fill: #d7e6f1; }
+      .line {
+        fill: none;
+        stroke: #2a4f6b;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .figure { transform-box: fill-box; transform-origin: 150px 200px; animation: rest 4s ease-in-out infinite; }
+      .arm { transform-box: fill-box; transform-origin: center bottom; animation: stretch 3.5s ease-in-out infinite; }
+      .z1 { animation: floatz 2.8s ease-in-out infinite; }
+      .z2 { animation: floatz 2.8s 0.35s ease-in-out infinite; }
+      .z3 { animation: floatz 2.8s 0.7s ease-in-out infinite; }
+      @keyframes rest {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes stretch {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-12deg); }
+      }
+      @keyframes floatz {
+        0%, 100% { opacity: 0.22; transform: translateY(0); }
+        50% { opacity: 0.92; transform: translateY(-8px); }
+      }
+    </style>
+  </defs>
+
+  <circle class="glow" cx="160" cy="156" r="128"/>
+  <ellipse cx="160" cy="274" rx="98" ry="12" fill="#2a4f6b" opacity="0.1"/>
+
+  <!-- sofa: mid tone, distinct from dark figure -->
+  <path class="mid" d="M42 210c18-28 48-42 86-42h70c28 0 52 12 68 42v36H42v-36z"/>
+  <rect class="ink" x="50" y="236" width="198" height="16" rx="8" opacity="0.55"/>
+  <rect class="foam" x="58" y="176" width="54" height="36" rx="16"/>
+
+  <!-- reclined person clearly on the sofa -->
+  <g class="figure">
+    <circle class="ink" cx="120" cy="132" r="18"/>
+    <!-- torso reclined into pillow -->
+    <path class="line" d="M126 150c18 18 42 34 70 40" stroke-width="14"/>
+    <!-- hips on cushion, thighs along sofa, calves draped -->
+    <path class="line" d="M196 190c22 2 40 8 52 20" stroke-width="14"/>
+    <path class="line" d="M248 210c4 14 2 28 -6 40" stroke-width="12"/>
+    <g class="arm">
+      <path class="line" d="M140 168c-8-22 0-42 16-54" stroke-width="11"/>
+      <circle class="ink" cx="160" cy="108" r="6"/>
+    </g>
+  </g>
+
+  <g fill="#2a4f6b" font-family="Georgia, 'Times New Roman', serif" font-weight="700">
+    <text class="z1" x="214" y="96" font-size="18">z</text>
+    <text class="z2" x="232" y="78" font-size="22">z</text>
+    <text class="z3" x="252" y="58" font-size="26">z</text>
+  </g>
+</svg>

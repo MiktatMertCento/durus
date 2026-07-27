@@ -1,0 +1,21 @@
+# build
+**/node_modules/
+**/dist/
+**/bin/
+**/static/
+**/*.exe
+
+# runtime
+**/data/
+**/*.tmp
+
+# env / IDE
+.env
+.env.*
+.DS_Store
+.idea/
+.vscode/
+
+# logs
+*.log
+npm-debug.log*

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none" role="img">
+  <title>Hazır</title>
+  <defs>
+    <style>
+      .glow { fill: #c5ddd0; opacity: 0.6; }
+      .ink { fill: #1b3a2f; }
+      .mid { fill: #2f6b4f; }
+      .line {
+        fill: none;
+        stroke: #1b3a2f;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .ring { fill: none; stroke: #1b3a2f; stroke-linecap: round; }
+      .orbit { transform-origin: 160px 160px; animation: spin 14s linear infinite; }
+      .figure { transform-box: fill-box; transform-origin: center; animation: ready 3.6s ease-in-out infinite; }
+      .dot-a, .dot-b, .dot-c { transform-box: fill-box; transform-origin: center; }
+      .dot-a { animation: pulse 2.4s ease-in-out infinite; }
+      .dot-b { animation: pulse 2.4s 0.8s ease-in-out infinite; }
+      .dot-c { animation: pulse 2.4s 1.6s ease-in-out infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes ready {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.16); }
+      }
+    </style>
+  </defs>
+
+  <circle class="glow" cx="160" cy="156" r="128"/>
+  <ellipse cx="160" cy="274" rx="92" ry="11" fill="#1b3a2f" opacity="0.08"/>
+
+  <circle class="ring" cx="160" cy="158" r="104" stroke-width="3" opacity="0.18"/>
+  <g class="orbit">
+    <circle class="dot-a mid" cx="160" cy="54" r="8"/>
+    <circle class="dot-b mid" cx="250" cy="210" r="8"/>
+    <circle class="dot-c mid" cx="70" cy="210" r="8"/>
+    <path class="ring" d="M160 54a104 104 0 0 1 90 156" stroke-width="4" opacity="0.35"/>
+  </g>
+
+  <!-- calm standing-ready posture -->
+  <g class="figure">
+    <circle class="ink" cx="160" cy="108" r="20"/>
+    <path class="line" d="M160 130v78" stroke-width="15"/>
+    <path class="line" d="M160 152c-28 4-42 18-48 34" stroke-width="12"/>
+    <path class="line" d="M160 152c28 4 42 18 48 34" stroke-width="12"/>
+    <path class="line" d="M160 208l-20 46" stroke-width="13"/>
+    <path class="line" d="M160 208l20 46" stroke-width="13"/>
+    <path class="line" d="M128 256h24M168 256h24" stroke-width="9" opacity="0.45"/>
+  </g>
+</svg>

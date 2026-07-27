@@ -1,0 +1,9 @@
+.git
+**/node_modules
+**/dist
+**/bin
+**/data
+**/.DS_Store
+*.log
+frontend/README.md
+**/*_test.go
